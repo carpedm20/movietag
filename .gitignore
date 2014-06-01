@@ -1,0 +1,14 @@
+*.pyc
+*.tar*
+*.jar
+*.json
+
+test*
+config.py
+par*
+cheatsheet.md
+run.sh
+
+data
+lib
+utmp
