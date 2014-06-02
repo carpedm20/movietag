@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flat UI Free</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+    start : 2014-06-01 06:47 pm
+                                   _           ____   ___
+      ___ __ _ _ __ _ __   ___  __| |_ __ ___ |___ \ / _ \
+     / __/ _` | '__| '_ \ / _ \/ _` | '_ ` _ \  __) | | | |
+    | (__ (_| | |  | |_) |  __/ (_| | | | | | |/ __/| |_| |
+     \___\__,_|_|  | .__/ \___|\__,_|_| |_| |_|_____|\___/
+                   |_|
+
+    end  : 2014-??-??
+    -->
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="{% static 'js/html5shiv.js' %}"></script>
+      <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+          <ul class="nav navbar-nav navbar-left">           
+            <li><a href="#fakelink">Menu Item<span class="navbar-unread">1</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+              <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#fakelink">About Us</a></li>
+           </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+        Start doing your next awesomeness here.
+    </div>
+    <!-- /.container -->
+
+    <!-- Flat-UI =============================-->
+    <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.3.custom.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ui.touch-punch.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'js/bootstrap-switch.js' %}"></script>
+    <script src="{% static 'js/flatui-checkbox.js' %}"></script>
+    <script src="{% static 'js/flatui-radio.js' %}"></script>
+    <script src="{% static 'js/jquery.tagsinput.js' %}"></script>
+    <script src="{% static 'js/jquery.placeholder.js' %}"></script>
+
+    <!-- d3-cloud =============================-->
+    <script src="{% static 'js/d3.js' %}"></script>
+    <script src="{% static 'js/d3.layout.cloud.js' %}"></script>
+  </body>
+</html>

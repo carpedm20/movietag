@@ -3,7 +3,13 @@ import time
 import os
 import lucene
 
-def get_word_list(text, field_name = 'fieldname'):
+def get_word_list(text, is_list=False, field_name = 'fieldname'):
+    if is_list:
+        new_text = ""
+        for i in text:
+            new_text += i + "\n"
+        text = new_text
+
     lucene.initVM(lucene.CLASSPATH)
     analyzer = lucene.KoreanAnalyzer();
 

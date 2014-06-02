@@ -4,7 +4,6 @@
 *.json
 
 *test*
-backup*
 config.py
 par*
 cheatsheet.md
