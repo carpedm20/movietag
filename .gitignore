@@ -2,6 +2,7 @@
 *.tar*
 *.jar
 *.json
+*.sqlite3
 
 *test*
 backup*

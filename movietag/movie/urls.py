@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'movietag.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^m/', include('movie.urls', namespace='movie')),
-
+    url(r'^$', '.views.movie_list', name='movie_lsit'),
     url(r'^admin/', include(admin.site.urls)),
 )

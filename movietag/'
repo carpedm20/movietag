@@ -1,24 +1,8 @@
-#!/usr/bin/python
 #-*- coding: utf-8 -*-
-
-from django.core.management import setup_environ
-from movietag import settings
-setup_environ(settings)
-
 import json
-import sys
 from datetime import datetime
 
 from movie.models import *
-
-if len(sys.argv) >= 3:
-    start = int(sys.argv[1])
-    end = int(sys.argv[2])
-else:
-    print "Need more arguments"
-    sys.exit(1)
-
-print "[#] %s to %s start!" % (start, end)
 
 def sub_genre_to_normal(sub_genre):
     genre_list = sub_genre.split('_')
@@ -47,9 +31,8 @@ f = open('movie_tag.json','r')
 j=json.loads(f.read())
 f.close()
 
-count = start
-
-for i in j['data'][start:end]:
+count = 172
+for i in j['data'][count:]:
     info = i['info']
     tag_list = i['tags']
 
@@ -112,7 +95,7 @@ for i in j['data'][start:end]:
 
     for tag in tag_list:
         text = tag['text']
-        print "[%s] %s" % (count, text)
+        print text
         freq = tag['freq']
 
         try:
@@ -128,3 +111,5 @@ for i in j['data'][start:end]:
         f.tag = t
         f.movie = m
         f.save()
+
+

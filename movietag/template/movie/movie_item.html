@@ -1,0 +1,36 @@
+{% block movie_li %}
+<li class="film-poster-114563 poster">
+  <img src="{{ movie.poster_url }}" width="150" height="222" alt="{{ movie.title }}" itemprop="photo">
+  
+  <ul class="poster-meta" style="opacity: 0; display: block;">
+    <li class="poster-views">
+      <span class="icon icon-views">
+        Views: 
+      </span>
+      <strong>
+        3,571
+      </strong>
+    </li>
+    
+    <li class="poster-likes">
+      <span class="icon icon-like">
+        Likes: 
+      </span>
+      <strong>
+        1,309
+      </strong>
+    </li>
+    
+  </ul>
+  
+  <a href="/film/only-lovers-left-alive/" class="frame" data-original-title="{{ movie.title }} ({{ movie.year }})">
+    
+    <span class="frame-title">
+      {{ movie.title }}
+    </span>
+    
+    <span class="overlay">
+    </span>
+  </a>
+</li>
+{% block %}

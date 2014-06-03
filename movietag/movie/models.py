@@ -9,15 +9,12 @@ from account.models import Account
 # Create your models here.
 class Movie(models.Model):
     title = models.CharField(max_length=100)
-    title_aka = models.CharField(max_length=100)
-    title_eng = models.CharField(max_length=100)
+    title_aka = models.CharField(max_length=100, null=True, blank=True)
+    title_eng = models.CharField(max_length=100, null=True, blank=True)
     title_url = models.SlugField(max_length=50)
 
-    main_genre = models.CharField(max_length=30, null=True, blank=True)
-    sub_genre = models.CharField(max_length=30, null=True, blank=True)
-
-    year = models.IntegerField(default=-1)
-    running_time = models.IntegerField(default=-1)
+    year = models.IntegerField(default=-1, null=True)
+    running_time = models.IntegerField(default=-1, null=True)
     released_at = models.DateField(null=True)
     re_released_at = models.DateField(null=True)
 
@@ -31,7 +28,7 @@ class Movie(models.Model):
 
     unique_id = models.CharField(max_length=10)
 
-    main_genre = models.ForeignKey('Genre')
+    main_genre = models.ForeignKey('Genre', null=True)
     sub_genre_set = models.ManyToManyField('Genre', related_name='sub_genre')
     
     def save(self, *args, **kwargs):
@@ -66,7 +63,7 @@ class Tag(models.Model):
 
 class Frequency(models.Model):
     tag = models.ForeignKey(Tag)
-    movie = models.ForeignKey(Movie)
+    movie = models.ForeignKey(Movie, null=True)
 
     freq = models.IntegerField(default=0)
 
