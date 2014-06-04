@@ -36,7 +36,10 @@ def sub_genre_to_normal(sub_genre):
     return new_list
 
 def main_genre_to_normal(main_genre):
-    main_genre = main_genre.strip()
+    try:
+        main_genre = main_genre.strip()
+    except:
+        return main_genre
 
     if main_genre == u'로맨스/멜로':
         return u'로맨스'
@@ -69,16 +72,18 @@ for i in j['data'][start:end]:
     try:
         main_genre = Genre.objects.get(text=main_genre)
     except:
-        main_genre = Genre(text=main_genre)
-        main_genre.save()
+        if main_genre:
+            main_genre = Genre(text=main_genre)
+            main_genre.save()
 
     sub_genre_list = []
     for sub in sub_genre:
         try:
             sub_obj = Genre.objects.get(text=sub)
         except:
-            sub_obj = Genre(text=sub)
-            sub_obj.save()
+            if sub:
+                sub_obj = Genre(text=sub)
+                sub_obj.save()
 
         sub_genre_list.append(sub_obj)
 
@@ -112,8 +117,8 @@ for i in j['data'][start:end]:
 
     for tag in tag_list:
         text = tag['text']
-        print "[%s] %s" % (count, text)
         freq = tag['freq']
+        print " => [%s] %s : %s" % (count, text, freq)
 
         try:
             t = Tag.objects.get(text = text)

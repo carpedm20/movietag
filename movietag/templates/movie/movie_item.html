@@ -1,0 +1,30 @@
+{% block movie_li %}
+
+<div class="col-lg-2 col-md-3 col-xs-3 poster">
+  <a class="" href="#">
+    <img class="img-responsive" src="{{ movie.poster_big }}" alt="title">
+  </a>
+  <ul class="poster-meta" style="opacity: 1; display: block;">
+      
+      <li class="poster-views">
+        <span class="icon icon-views">
+          Views: 
+        </span>
+        <strong>
+          8,201
+        </strong>
+      </li>
+      
+      <li class="poster-likes">
+        <span class="icon icon-like">
+          Likes: 
+        </span>
+        <strong>
+          2,304
+        </strong>
+      </li>
+      
+    </ul>
+</div>
+
+{% endblock %}

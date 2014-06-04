@@ -4,7 +4,6 @@ init:
 	./manage.py syncdb
 	./manage.py schemamigration account --initial
 	./manage.py schemamigration movie --initial
-	./manage.py shell
 
 migrate:
 	./manage.py schemamigration movie --auto

@@ -5,6 +5,7 @@
 *.sqlite3
 
 *test*
+*migrations*
 backup*
 config.py
 par*

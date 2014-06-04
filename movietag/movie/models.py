@@ -56,7 +56,6 @@ class Tag(models.Model):
     text = models.CharField(max_length=30)
 
     movie_set = models.ManyToManyField(Movie)
-    like_user = models.ManyToManyField(Account)
 
     def __unicode__(self):
         return "%s" % (self.text)
@@ -66,6 +65,7 @@ class Frequency(models.Model):
     movie = models.ForeignKey(Movie, null=True)
 
     freq = models.IntegerField(default=0)
+    like_user = models.ManyToManyField(Account)
 
     def __unicode__(self):
         return "%s - %s" % (tag.text, self.freq)
