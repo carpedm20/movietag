@@ -68,4 +68,4 @@ class Frequency(models.Model):
     like_user = models.ManyToManyField(Account)
 
     def __unicode__(self):
-        return "%s - %s" % (tag.text, self.freq)
+        return "%s - %s" % (self.tag.text, self.freq)

@@ -63,6 +63,25 @@ for i in j['data'][start:end]:
         m = Movie.objects.get(title = info['title'])
         print " [==>] skip"
         continue
+
+        for tag in tag_list:
+            text = tag['text']
+            freq = tag['freq']
+            print " => [%s] %s : %s" % (count, text, freq)
+
+            try:
+                t = Tag.objects.get(text = text)
+            except:
+                t = Tag(text = text)
+                t.save()
+
+            t.movie_set.add(m)
+            t.save()
+
+            f = Frequency(freq=freq)
+            f.tag = t
+            f.movie = m
+            f.save()
     except:
         pass
 
