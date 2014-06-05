@@ -33,7 +33,7 @@ def index(request):
 
     return render(request, template)
 
-def movie_search(request, text):
+def movie_search(request, text=None):
     context = RequestContext(request)
     template = 'movie/movie_list.html'
 

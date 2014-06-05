@@ -1,7 +1,7 @@
 {% block movie_li %}
 
-<div class="poster col-lg-2 col-md-3 col-xs-3">
-  <img class="img-responsive" src="{{ movie.poster_big }}" alt="{{ movie.title }}">
+<div class="poster col-md-3 col-xs-3">
+  <img class="img-poster" src="{{ movie.poster_big }}" alt="{{ movie.title }}">
   <a class="frame" href="#" title="{{ movie.title }}">
     <span class="frame-title">{{ movie.title }}</span>
     <span class="overlay"></span>
@@ -10,8 +10,8 @@
     <ul class="list-group">
       {% for freq in movie.top_freqs reversed %}
         <li class="list-group-item">
-          <a href="{% url 'movie:movie_search' text=movie.title  %}">
-            <span class="badge">{{ freq.freq }}</span>
+          <span class="badge">{{ freq.freq }}</span>
+          <a href="{% url 'movie:movie_search' freq.tag.text %}">
             {{ freq.tag }}
           </a>
         </li>
