@@ -54,7 +54,7 @@ def movie_search(request, text=None):
 
         movie_list.append(movie)
 
-    movie_list = add_freq_to_movie_list(movie_list[:20])
+    movie_list = add_freq_to_movie_list(movie_list[:30])
 
     current_account = get_account_from_user(request.user)
 
