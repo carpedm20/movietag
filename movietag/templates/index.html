@@ -3,8 +3,10 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="content col-xs-10 col-sm-10 text-center">
-  <img src="{% static 'img/logo.png' %}" />
-  <input type="text" value="" placeholder="Inactive" class="form-control">
+<div id="container">
+  <div class="content col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center">
+    <img id="logo" src="{% static 'img/logo.png' %}" />
+    <input type="text" value="" placeholder="Inactive" class="form-control">
+  </div>
 </div>
 {% endblock %}

@@ -2,10 +2,12 @@
 
 {% block content %}
 
+<div class="container">
 <div id="content">
   {% for movie in movie_list %}
     {% include 'movie/movie_item.html' with movie=movie %}
   {% endfor %}
+</div>
 </div>
 
 {% endblock %}

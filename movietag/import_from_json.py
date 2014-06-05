@@ -115,10 +115,15 @@ for i in j['data'][start:end]:
     except:
         re_released_at = None
 
+    title_url = info['title_url']
+
+    if title_url > 50:
+        title_url = title_url[:50]
+
     m = Movie(title = info['title'],
               title_aka = info['title_aka'],
               title_eng = info['title_eng'],
-              title_url = info['title_url'],
+              title_url = title_url,
               year = info['year'],
               running_time = info['running_time'],
               released_at = released_at,

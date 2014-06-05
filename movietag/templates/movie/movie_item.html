@@ -10,8 +10,10 @@
     <ul class="list-group">
       {% for freq in movie.top_freqs reversed %}
         <li class="list-group-item">
-          <span class="badge">{{ freq.freq }}</span>
-          {{ freq.tag }}
+          <a href="{% url 'movie:movie_search' text=movie.title  %}">
+            <span class="badge">{{ freq.freq }}</span>
+            {{ freq.tag }}
+          </a>
         </li>
       {% endfor %}
     </ul>
