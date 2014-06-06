@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, render_to_response, RequestContex
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from endless_pagination.decorators import page_template
 
 from .models import Movie, Genre, Tag, Frequency
 
@@ -16,10 +17,13 @@ def add_freq_to_movie_list(movie_list):
 
         try:
             for tag in tag_set[len(tag_set)-9:len(tag_set)]:
+                if tag.text == u'영화':
+                    continue
+
                 freqs = Frequency.objects.filter(movie=movie, tag=tag)
+
                 for f in freqs:
-                    if f.tag.text != u"영화":
-                        movie.top_freqs.append(f)
+                    movie.top_freqs.append(f)
         except:
             pass
 
@@ -33,16 +37,26 @@ def index(request):
 
     return render(request, template)
 
-def movie_search(request, text=None):
-    context = RequestContext(request)
-    template = 'movie/movie_list.html'
+@page_template('movie/movie_item.html')
+def movie_search(request,
+                 text=None,
+                 template='movie/movie_list.html',
+                 extra_context=None):
+    template = template
+    page_template = 'movie/movie_item.html'
 
-    try:
-        tag = Tag.objects.get(text=text)
-    except:
-        tag = Tag.objects.filter(text=text)[0]
+    #tag = Tag.objects.get(text=text)
+    freqs = Frequency.objects.filter(tag__text=text)
 
     movie_list = []
+
+    for freq in freqs:
+        if freq.freq == 1:
+           continue
+
+        movie_list.append(freq.movie)
+
+    """
     for movie in tag.movie_set.all():
         try:
             freq = Frequency.objects.get(movie=movie, tag=tag)
@@ -53,12 +67,18 @@ def movie_search(request, text=None):
             continue
 
         movie_list.append(movie)
+    """
 
-    movie_list = add_freq_to_movie_list(movie_list[:30])
+    #movie_list = add_freq_to_movie_list(movie_list)
+    movie_list = movie_list[:100]
 
     current_account = get_account_from_user(request.user)
 
-    data = {'movie_list' : movie_list, }
+    data = {'movie_list': movie_list,
+            'page_template': template, }
+
+    return render_to_response(
+        template, data, context_instance=RequestContext(request))
 
     return render(request, template, data)
 

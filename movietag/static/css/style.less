@@ -18,16 +18,11 @@ body {
   width: 100% !important;
 }
 
-.img-poster {
-  width: 100%;
-  height: auto;
-}
-
 ol, ul {
     list-style: none;
 }
 
-.content {
+#content {
   position: absolute;
   top: 35%;
   height: 200px;
@@ -62,11 +57,19 @@ ol, ul {
     border-radius: 4px;
     background-repeat: no-repeat;
 
-    img {
-        display: block;
+    .img-poster {
+        margin-top: 15px;
+        border-radius: 4px;
+        width: 100%;
+        height: auto;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
-        border-radius: 4px;
+    }
+
+    .raty {
+        font-size: 0.9em;
+        width: auto !important;
+        margin-top: 4px;
     }
 
     .poster-meta {

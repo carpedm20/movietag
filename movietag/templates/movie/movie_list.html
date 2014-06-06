@@ -2,12 +2,23 @@
 
 {% block content %}
 
+{% load endless %}
+
 {% include 'navbar.html' %}
+
 <div class="container">
   <div class="content">
-    {% for movie in movie_list %}
-      {% include 'movie/movie_item.html' with movie=movie %}
-    {% endfor %}
+    {% include 'movie/movie_item.html' with movie_list=movie_list %}
+
+    {% block js %}
+      {{ block.super }}
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+      <script>
+        $.endlessPaginate({ paginateOnScroll: true,
+                            paginateOnScrollMargin: 20, });
+      </script>
+    {% endblock %}
   </div>
 </div>
 
