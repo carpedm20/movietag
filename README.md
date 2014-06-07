@@ -37,7 +37,8 @@ Developement Histroy
  - mongoimport를 이용해 몇 초만에 db에 들어감 (json파일이 너무 커서 Assert failure on mongorestore (b.empty()) 오류 발생. 그래서 작게 잘라 넣었음)
 5. Web 구축
  - **Django webframework** 사용 (이번 기회에 **MEAN** stack을 공부하려고 했으나... 빠른 개발을 위해 포기)
- - jQuery, Bootstrap, [Bootstrap-twipsy](http://okonski.org/twipsy-bootstrap/docs/javascript.html), [D3](http://d3js.org/), [Flat-UI](https://github.com/designmodo/Flat-UI), [jQuery-Masonry](http://desandro.github.io/masonry/), [imagesloaded](https://github.com/desandro/imagesloaded) 등 이용
+ - Backend : Django, [South](http://south.aeracode.org/), [endless-pagination](https://github.com/frankban/django-endless-pagination) 등 사용
+ - Frontend : jQuery, Bootstrap, [Bootstrap-twipsy](http://okonski.org/twipsy-bootstrap/docs/javascript.html), [D3](http://d3js.org/), [Flat-UI](https://github.com/designmodo/Flat-UI), [jQuery-Masonry](http://desandro.github.io/masonry/), [imagesloaded](https://github.com/desandro/imagesloaded) 등 사용
  - 태그 검색 기능 완성
  * infinite scroll 기능 개발 중...
 6. 긍정 부정 리뷰
