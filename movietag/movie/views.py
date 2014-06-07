@@ -37,7 +37,7 @@ def index(request):
 
     return render(request, template)
 
-#@page_template('movie/movie_item.html')
+@page_template('movie/movie_item.html')
 def movie_search(request,
                  text=None,
                  template='movie/movie_list.html',
@@ -69,7 +69,7 @@ def movie_search(request,
         movie_list.append(movie)
     """
 
-    movie_list = add_freq_to_movie_list(movie_list[:40])
+    movie_list = add_freq_to_movie_list(movie_list[:80])
     #movie_list = movie_list[:100]
 
     current_account = get_account_from_user(request.user)

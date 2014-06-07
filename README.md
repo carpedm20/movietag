@@ -3,7 +3,12 @@
 MovieTag
 -------------
 
-Find a movie with any tag you want!
+Find a movie to watch with any tags you want!
+
+Tags are automatically generated with morpheme analysis of big data.
+
+Percentage of positive and negative reviews will be given through deep learning.
+
 
 Documentation
 -------------
