@@ -1,7 +1,7 @@
-![alt_tag](http://4.bp.blogspot.com/-bA0dalRit_A/U5BkjF2lOTI/AAAAAAAAD2Y/makxPjOGN2I/s1600/logo_red.png)
-
 MovieTag
 -------------
+
+![alt_tag](http://4.bp.blogspot.com/-YAJtTvUJQGE/U5Ln5tv_1fI/AAAAAAAAEBU/I9zPH4YfbBE/s1600/facebook.png)
 
 Find a movie to watch with any tags you want!
 
