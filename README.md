@@ -33,7 +33,7 @@ Developement Histroy
  - 넣는 속도가 sqlite 보다 월등히 빠르며, 멀티 프로세스로 돌려도 lock 처리를 mysql이 알아서 해주는 장점 (1~2일 소요)
  - 하지만 특정 tag에 대한 영화들을 tag의 frequency로 정렬하는 속도가 느림.
  - 파싱 결과가 json이라는 것에 착안해 mongodb를 사용
- - mongoimport를 이용해 몇 초만에 db에 들어감 (json파일이 너무 커서 오류 발생. 그래서 작게 잘라 넣었음)
+ - mongoimport를 이용해 몇 초만에 db에 들어감 (json파일이 너무 커서 Assert failure on mongorestore (b.empty()) 오류 발생. 그래서 작게 잘라 넣었음)
 5. Web 구축
  - Django webframework 사용 (이번 기회에 mean stack을 공부하려고 했으나... 빠른 개발을 위해 포기)
  - jquery, bootstrap, bootstrap-twipsy, d3, flat-ui, jquery-masonry, jquery-imagesloaded 등 이용
