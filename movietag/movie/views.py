@@ -37,12 +37,8 @@ def index(request):
 
     return render(request, template)
 
-@page_template('movie/movie_item.html')
-def movie_search(request,
-                 text=None,
-                 template='movie/movie_list.html',
-                 extra_context=None):
-    template = template
+def movie_search(request, text=None):
+    template = 'movie/movie_list.html'
     page_template = 'movie/movie_item.html'
 
     #tag = Tag.objects.get(text=text)
@@ -69,16 +65,12 @@ def movie_search(request,
         movie_list.append(movie)
     """
 
-    movie_list = add_freq_to_movie_list(movie_list[:80])
+    movie_list = add_freq_to_movie_list(movie_list[:20])
     #movie_list = movie_list[:100]
 
     current_account = get_account_from_user(request.user)
 
-    data = {'movie_list': movie_list,
-            'page_template': template, }
-
-    return render_to_response(
-        template, data, context_instance=RequestContext(request))
+    data = {'movie_list': movie_list, }
 
     return render(request, template, data)
 

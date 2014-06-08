@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'south',
-    'endless_pagination',
 
     'movie',
     'account',

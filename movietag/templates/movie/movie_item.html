@@ -1,9 +1,5 @@
 {% block movie_li %}
 
-{% load endless %}
-
-{% paginate movie_list %}
-
 {% for movie in movie_list %}
     <div class="poster col-md-3 col-sm-4 col-xs-6">
       <img class="img-poster" src="{{ movie.poster_big }}" alt="{{ movie.title }}">
@@ -26,7 +22,5 @@
       </div>
     </div>
 {% endfor %}
-
-{% show_more %}
 
 {% endblock %}

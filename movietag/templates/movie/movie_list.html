@@ -2,36 +2,11 @@
 
 {% block content %}
 
-{% load endless %}
-
 {% include 'navbar.html' %}
 
 <div class="container">
   <div class="content">
     {% include 'movie/movie_item.html' with movie_list=movie_list %}
-
-    {% block js %}
-      {{ block.super }}
-      <script src="http://code.jquery.com/jquery-latest.js"></script>
-      <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-      <script>
-        $.endlessPaginate({
-            paginateOnScroll: true,
-            paginateOnScrollMargin: 20,
-            onCompleted: function(context, fragment) {
-              var container = document.querySelector('.content');
-
-              var msnry = new Masonry( container, {
-                 itemSelector: '.poster',
-                 columnWidth         : '.poster',
-              });
-
-              var body = document.getElementById('body');
-              body.style.background = "#14181c";
-            }
-        });
-      </script>
-    {% endblock %}
   </div>
 </div>
 
