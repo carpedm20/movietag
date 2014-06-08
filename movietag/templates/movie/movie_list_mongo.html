@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+  <div class="content">
+    {% include 'movie/movie_item_mongo.html' with movie_list=movie_list %}
+  </div>
+</div>
+
+{% endblock %}

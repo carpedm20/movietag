@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'south',
+    #'south',
 
     'movie',
     'account',
@@ -62,12 +62,8 @@ WSGI_APPLICATION = 'movietag.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carpedm20',
-        'USER': 'carpedm20',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django_mongodb_engine',
+        'NAME' : 'carpedm20',
     }
 }
 

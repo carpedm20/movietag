@@ -3,6 +3,7 @@ import uuid
 import base64
 
 from django.db import models
+from djangotoolbox.fields import ListField
 
 from account.models import Account
 
