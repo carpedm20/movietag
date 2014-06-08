@@ -41,7 +41,7 @@ Developement Histroy
  - 파싱 결과가 json이라는 것에 착안해 **MongoDB**를 사용
  - mongoimport를 이용해 몇 초만에 db에 들어감 (json파일이 너무 커서 Assert failure on mongorestore (b.empty()) 오류 발생. 그래서 작게 잘라 넣었음)
  - DB querying 속도가 월등히 빨라짐 (만세!)
- - 결론 : **MongoDB**의 Text indexing 기능 때문에 **MYSQL** + **Django** ORM 보다 훨씬 빠른것으로 보인다
+ - 결론 : **MongoDB**의 Text indexing 기능 때문에 raw query가 **MYSQL** + **Django** ORM 보다 훨씬 빠른것으로 보인다
 5. Web 구축
  - **Django webframework** 사용 (이번 기회에 **MEAN** stack을 공부하려고 했으나... 빠른 개발을 위해 포기)
  - Back-end : Django, [South](http://south.aeracode.org/), [endless-pagination](https://github.com/frankban/django-endless-pagination) 등 사용
@@ -49,7 +49,7 @@ Developement Histroy
  - 태그 검색 기능 완성
  * infinite scroll 기능 개발 중...
 6. 긍정 부정 리뷰
- * 파싱한 리뷰 데이터를 이용해 리뷰의 긍정, 부정을 **deep-learning** 을 이용해 분석할 계획
+ * 파싱한 리뷰 데이터를 이용해 리뷰의 긍정, 부정을 먼저 단일 형용사, 명사와 자주 같이 등장하는 형용사, 명사 pair들을 이용해 **Logistic regression** 을 이용해 본 후에 **Deep learning** 을 이용해 분석할 계획
  * 먼저 리뷰를 형태소 분석을 통해서 명사, 형용사 리스트를 만듦
  * 리뷰에 어떤 형용사와 명사가 사용되었는지를 바탕으로 learning 시작
  * learning시 label은 리뷰의 별점 및 영화의 평균 별점이 사용될 예정

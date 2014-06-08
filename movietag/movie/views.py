@@ -71,10 +71,13 @@ def movie_search(request, text=None):
         m['tags'] = []
 
         count = 0
+        MAX_COUNT = 9
         main_tag_find = False
 
-        for tag in movie.tags:
-            if count > 10 and main_tag_find:
+        l = movie.tags
+
+        for tag in l[::-1]:
+            if count > MAX_COUNT and main_tag_find:
                 break
 
             key = tag.keys()[0]
@@ -90,7 +93,7 @@ def movie_search(request, text=None):
                 main_tag_find = True
                 continue
 
-            if count > 10:
+            if count > MAX_COUNT:
                 continue
 
             t = {'key':key, 'value':value}
@@ -99,7 +102,7 @@ def movie_search(request, text=None):
 
         new_movie_list.append(m)
 
-    #new_movie_list = sorted(new_movie_list, key=lambda k: k['main_value'])
+    new_movie_list = sorted(new_movie_list, key=lambda k: k['main_value'])
 
     """
     Version 2
