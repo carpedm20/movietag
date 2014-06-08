@@ -70,16 +70,36 @@ def movie_search(request, text=None):
 
         m['tags'] = []
 
-        for tag in movie.tags[-10:]:
+        count = 0
+        main_tag_find = False
+
+        for tag in movie.tags:
+            if count > 10 and main_tag_find:
+                break
+
             key = tag.keys()[0]
+            value = tag.values()[0]
+
             if key == u'영화':
                 continue
-            value = tag.values()[0]
+
+            if key == text:
+                m['main_key'] = key
+                m['main_value'] = value
+
+                main_tag_find = True
+                continue
+
+            if count > 10:
+                continue
 
             t = {'key':key, 'value':value}
             m['tags'].append(t)
+            count += 1
 
         new_movie_list.append(m)
+
+    #new_movie_list = sorted(new_movie_list, key=lambda k: k['main_value'])
 
     """
     Version 2

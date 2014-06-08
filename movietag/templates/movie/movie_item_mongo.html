@@ -10,10 +10,18 @@
       <div class="raty text-center" data-score="{{ movie.other_rating }}"></div>
       <div class="film-stats">
         <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            <span class="badge">{{ movie.main_value }}</span>
+            <a href="{% url 'movie:movie_search' movie.main_key %}">
+              {{ movie.main_key }}
+            </a>
+          </li>
           {% for freq in movie.tags reversed %}
             <li class="list-group-item">
               <span class="badge">{{ freq.value }}</span>
-              {{ freq.key }}
+              <a href="{% url 'movie:movie_search' freq.key %}">
+                {{ freq.key }}
+              </a>
             </li>
           {% endfor %}
         </ul>

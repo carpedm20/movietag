@@ -40,6 +40,8 @@ Developement Histroy
  - **Apache Cassandra** 를 사용하려 했으나 짧은 구글링으로 write보다 read가 느리다는 글을 보게됨. read가 월등히 많을것이기 때문에 탈락
  - 파싱 결과가 json이라는 것에 착안해 **MongoDB**를 사용
  - mongoimport를 이용해 몇 초만에 db에 들어감 (json파일이 너무 커서 Assert failure on mongorestore (b.empty()) 오류 발생. 그래서 작게 잘라 넣었음)
+ - DB querying 속도가 월등히 빨라짐 (만세!)
+ - 결론 : **MongoDB**의 Text indexing 기능 때문에 **MYSQL** + **Django** ORM 보다 훨씬 빠른것으로 보인다
 5. Web 구축
  - **Django webframework** 사용 (이번 기회에 **MEAN** stack을 공부하려고 했으나... 빠른 개발을 위해 포기)
  - Back-end : Django, [South](http://south.aeracode.org/), [endless-pagination](https://github.com/frankban/django-endless-pagination) 등 사용
