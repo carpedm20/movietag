@@ -6,12 +6,15 @@
 *.sqlite3
 
 *test*
+*git*
+*bitbucket*
 *migrations*
-backup*
+*spider*
+*backup*
 config.py
 *parse*
 cheatsheet.md
-run.sh
+*run.*
 
 data
 lib
