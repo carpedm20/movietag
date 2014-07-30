@@ -60,12 +60,12 @@ WSGI_APPLICATION = 'movietag.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME' : 'carpedm20',
     }
-}
+}"""
 
 DATABASE_OPTIONS = {"charset":"uft8"}
 

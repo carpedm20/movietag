@@ -5,7 +5,7 @@ import subprocess, shlex
 PER_COUNT = 1000
 cur_index = 0
 
-f=open('movie_tag.json','r')
+f=open('movie_tag_key_is_not_text_and_freq.json','r')
 jj = json.loads(f.read())
 f.close()
 

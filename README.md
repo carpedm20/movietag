@@ -16,13 +16,36 @@ Documentation
 The documentation is available at ???
 
 
-Developement Histroy
---------------------
+Development History
+-------------------
+
+1. Plan to make a web service which can search any movie with **tags**
+ - saw a new feature `Game tag` from **steam**
+ - saw a restaurant recommendation service "[Dining code](http://www.diningcode.com/)" using big data (reviews from blogs)
+ - want to find a movie not with a category like `Romance` but with a tag like `first love`, `farewell` etc.
+2. Movie review **parsing**
+ - save data as `json`
+3. **Morpheme** analysis
+ - first, used [lucene-korean-analyzer](https://github.com/need4spd/lucene-Korean-Analyzer)
+ - have a weakness that cannot distinguish `predicate` and `uninflected word` and hard to get `word frequencies` from reviews
+ - next, used [mecab-ko](https://bitbucket.org/eunjeon/mecab-ko) 와 [mecab-ko-dic](https://bitbucket.org/eunjeon/mecab-ko-dic)
+ - can get details from review like `predicate` and `uninflected word` information
+D4. Build a DB
+ - to connect with `django`, write a python code that import json data to `SQLite`
+ - but too slow file-io and cannot write a multi-thread code because of file lock (estimated time to import all data was 6 days)
+ - change DB to `MySQL`
+ - faster file-io and possible to write a multi-thread code (1~2 days)
+ - 
+
+
+
+Developement Histroy (Korean)
+-----------------------------
 
 1. 영화를 **태그**로 검색하는 서비스를 만들기로 계획
  - **steam**의 게임 태그 라는 새로운 기능을 보게됨
  - 빅데이터(블로그 글)를 이용해 음식점을 추천해 주는 [다이닝 코드](http://www.diningcode.com/) 를 보게됨
- - 로멘스 처럼 거대한 카테고라기 아닌 **첫사랑**, **이별** 과 같은 keyword로 영화를 찾고 싶음
+ - 로멘스처럼 거대한 카테고라기 아닌 **첫사랑**, **이별** 과 같은 keyword로 영화를 찾고 싶음
 2. 영화 리뷰 **파싱**
  - json 파일로 저장
  - json 에서 tag를 {"text": "첫사랑", "freq": 1} 로 저장했으나, 쿼리 낭비를 막기 위해 {"첫사랑": 1} 로 구조 변환
@@ -33,9 +56,9 @@ Developement Histroy
  - 용언, 체언을 세세하게 분류한 결과가 나오는 등의 장점
 4. DB 구축
  - 처음에는 django 프로젝트와 연동을 위해 python 코드로 **SQLite** 에 집어 넣음
- - DB에 import 하는 속도(file-io)가 너무 느림 & file-io에 lock이 걸려 멀티프로세스를 만들 수 없음 (6일 정도 소요 될 거라 예상)
+ - DB에 import 하는 속도(file-io)가 너무 느림 & file-io에 lock이 걸려 멀티쓰레드를만들 수 없음 (6일 정도 소요 될 거라 예상)
  - **MySQL** 로 DB 변경
- - 넣는 속도가 sqlite 보다 월등히 빠르며, 멀티 프로세스로 돌려도 lock 처리를 mysql이 알아서 해주는 장점 (1~2일 소요)
+ - 넣는 속도가 sqlite 보다 월등히 빠르며, 멀티쓰레드로 돌려도 lock 처리를 mysql이 알아서 해주는 장점 (1~2일 소요)
  - 하지만 특정 tag에 대한 영화들을 tag의 frequency로 정렬하는 속도가 느림.
  - **Apache Cassandra** 를 사용하려 했으나 짧은 구글링으로 write보다 read가 느리다는 글을 보게됨. read가 월등히 많을것이기 때문에 탈락
  - 파싱 결과가 json이라는 것에 착안해 **MongoDB**를 사용

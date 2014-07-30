@@ -42,12 +42,18 @@ def get_filtered_list(words, is_list = False, options = BASIC_OPTION):
     node = m.parseToNode(text.encode('utf-8'))
 
     while node:
+        #filtered_list.append(node.feature.split(",")[0])
+
         #print node.surface + '\t' + node.feature
-        if node.feature.split(",")[0] in options:
-            replace_node = re.sub(re.compile("[!-/:-@[-`{-~]"), "", node.surface)
-            if replace_node != "" and replace_node != " ":
+        #if node.feature.split(",")[0] in options:
+        #    replace_node = re.sub(re.compile("[!-/:-@[-`{-~]"), "", node.surface)
+        #    if replace_node != "" and replace_node != " ":
                 #filtered_list.append("%s : %s" % (replace_node, node.feature))
-                filtered_list.append(replace_node)
+        word = node.surface.strip()
+        print word
+
+        if word != '':
+            filtered_list.append(word)
 
         node = node.next
 
