@@ -28,7 +28,7 @@ Development History
 3. **Morpheme** analysis
  - first, used [lucene-korean-analyzer](https://github.com/need4spd/lucene-Korean-Analyzer)
  - have a weakness that cannot distinguish **predicate** and **uninflected word** and hard to get **word frequencies** from reviews
- - next, used [mecab-ko](https://bitbucket.org/eunjeon/mecab-ko) 와 [mecab-ko-dic](https://bitbucket.org/eunjeon/mecab-ko-dic)
+ - next, used [mecab-ko](https://bitbucket.org/eunjeon/mecab-ko) and [mecab-ko-dic](https://bitbucket.org/eunjeon/mecab-ko-dic)
  - can get details from review like **predicate** and **uninflected word** information
 D4. Build a DB
  - to connect with **django**, write a python code that import json data to **SQLite**
