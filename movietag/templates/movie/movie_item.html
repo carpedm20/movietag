@@ -1,26 +1,27 @@
 {% block movie_li %}
 
 {% for movie in movie_list reversed %}
-    <div class="poster col-md-3 col-sm-4 col-xs-6">
-      <img class="img-poster" src="{{ movie.poster_big }}" alt="{{ movie.title }}">
-      <a class="frame" href="#" title="{{ movie.title }}">
-        <span class="frame-title">{{ movie.title }}</span>
-        <span class="overlay"></span>
-      </a>
-      <div class="raty text-center" data-score="{{ movie.other_rating }}"></div>
-      <div class="film-stats">
-        <ul class="list-group">
-          {% for freq in movie.top_freqs reversed %}
-            <li class="list-group-item">
-              <span class="badge">{{ freq.freq }}</span>
-              <a href="{% url 'movie:movie_search' freq.tag.text %}">
-                {{ freq.tag }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+  <!--<div class="poster col-md-3 col-sm-4 col-xs-6">-->
+  <div class="poster col-md-3 col-sm-4 col-xs-12">
+    <img class="img-poster" src="{{ movie.poster_big }}" alt="{{ movie.title }}">
+    <a class="frame" href="#" title="{{ movie.title }}">
+      <span class="frame-title">{{ movie.title }}</span>
+      <span class="overlay"></span>
+    </a>
+    <div class="raty text-center" data-score="{{ movie.other_rating }}"></div>
+    <div class="film-stats">
+      <ul class="list-group">
+        {% for freq in movie.top_freqs reversed %}
+          <li class="list-group-item">
+            <span class="badge">{{ freq.freq }}</span>
+            <a href="{% url 'movie:movie_search' freq.tag.text %}">
+              {{ freq.tag }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
+  </div>
 {% endfor %}
 
 {% endblock %}
