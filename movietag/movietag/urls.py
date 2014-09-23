@@ -10,7 +10,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'movietag.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', 'movie.views.index', name='index'),
+    #url(r'^$', 'movie.views.index', name='index'),
+    url(r'^$', 'movie.views.movie_search_default', name='index'),
 
     url(r'^m/', include('movie.urls', namespace='movie')),
 

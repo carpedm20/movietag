@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', views.movie_list, name='movie_list'),
+    url(r'^search/$', views.movie_search_default, name='movie_search_default'),
     url(r'^search/(?P<text>[\w]+)/$', views.movie_search, name='movie_search'),
 )

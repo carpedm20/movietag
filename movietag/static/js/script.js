@@ -1,3 +1,8 @@
+$('#search').submit(function() {
+  location.href="http://minsky.unist.ac.kr:8002/m/search/" + $("#search-text")[0].value;
+  return false;
+});
+
 $( document ).ready(function() {
   var $container = $('.content');
 

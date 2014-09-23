@@ -49,7 +49,10 @@ def index(request):
 
     return render(request, template)
 
-def movie_search(request, text=None):
+def movie_search_default(request):
+    return movie_search(request, u"첫사랑")
+
+def movie_search(request, text):
     """
     Version 3 (MongoDB)
     """
@@ -102,7 +105,10 @@ def movie_search(request, text=None):
 
         new_movie_list.append(m)
 
-    new_movie_list = sorted(new_movie_list, key=lambda k: k['main_value'])
+    try:
+        new_movie_list = sorted(new_movie_list, key=lambda k: k['main_value'])
+    except:
+        pass
 
     """
     Version 2
