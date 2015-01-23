@@ -1,7 +1,7 @@
 MovieTag
 -------------
 
-![alt_tag](http://4.bp.blogspot.com/-YAJtTvUJQGE/U5Ln5tv_1fI/AAAAAAAAEBU/I9zPH4YfbBE/s1600/facebook.png)
+![alt_tag](https://raw.githubusercontent.com/carpedm20/movietag/master/content/logo.png)
 
 Find a movie to watch with any tags you want!
 
@@ -95,13 +95,13 @@ Developement Histroy (Korean)
 Screenshot
 ----------
 
-![alt_tag](http://2.bp.blogspot.com/--R1S12wrrOY/U5LZwXSLM5I/AAAAAAAAEA8/z0LoecZDA8Q/s1600/screenshot4.png)
+![alt_tag](https://raw.githubusercontent.com/carpedm20/movietag/master/content/screenshot1.png)
 
-![alt_tag](http://3.bp.blogspot.com/-xJ26vfyGTkE/U5BkjcRsyFI/AAAAAAAAD2c/dRWxviq7H8E/s1600/screenshot.png)
+![alt_tag](https://raw.githubusercontent.com/carpedm20/movietag/master/content/screenshot2.png)
 
-![alt_tag](http://1.bp.blogspot.com/-SWuaT4ztYsI/U5BlnJRslUI/AAAAAAAAD2w/obLLeYKJ0w8/s1600/screenshot2.png)
+![alt_tag](https://raw.githubusercontent.com/carpedm20/movietag/master/content/console1.png)
 
-![alt_tag](http://2.bp.blogspot.com/-quHw9iA83wc/U5Bmxh_L7JI/AAAAAAAAD24/sSIA-25Gux4/s1600/screenshot3.png)
+![alt_tag](https://raw.githubusercontent.com/carpedm20/movietag/master/content/console2.png)
 
 Copyright
 ---------
